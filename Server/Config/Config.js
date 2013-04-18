@@ -9,17 +9,19 @@
 
 module.exports = {
 
-    // 适配服务器参数
-    AdapterServerIP : "127.0.0.1",
-    AdapterServerPort : 9000,
-
     // 网关服务器参数
-    GatewayPortMin : 9100,
-    GatewayportMax : 9200,
+    GatewayServerIP : "127.0.0.1",
+    GatewayServerPortWAN : 9000,        // 广域网监听端口，监听来自客户端的请求
+    GatewayServerPortLAN : 9001,        // 局域网监听端口，监听来自大厅的请求
 
     // 大厅服务器参数
+    HallServerIP : "127.0.0.1",
+    HallServerPort : 9100,
 
     // 场景服务器参数
+    SceneServerPortMin : 9200,
+    SceneServerPortMax : 9300,
+
 
     end : null
 };

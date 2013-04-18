@@ -35,13 +35,13 @@ function CreateServer(nPort, funInit, funReceive, funClose, funConnect) {
 
         //数据错误事件
         hSocket.on('error', function(exception){
-            console.log('socket error:' + exception);
+            //console.log('socket error:' + exception);
             hSocket.end();
         });
 
         // 服务器关闭
         hSocket.on('end', function() {
-            console.log('server end!');
+            //console.log('server end!');
         });
     });
     server.listen(nPort);
@@ -83,12 +83,12 @@ function CreateClient(nPort, szHost, funInit, funReceive) {
     });
 
     hSocket.on('error',function(error){
-        console.log('error:'+ error);
+        //console.log('error:'+ error);
         //hSocket.destory();
     });
 
     hSocket.on('close',function(){
-        console.log('Connection closed');
+        //console.log('Connection closed');
     });
 
     //当客户端收到完整的数据包时

@@ -20,12 +20,10 @@ var server = net.createServer(function(c) {
 server.listen(8124, function() {
     console.log('server bound');
 });*/
+function Func(n){
+    console.log("参数类型：" + typeof(arguments));
+    return [Math.floor(n/100), Math.floor(n/10%10), Math.floor(n%10)];
+}
 
-var array = [];
-array.push(1);
-array.push(2);
-array.push(3);
-console.log("" + array);
-
-array.splice(0, 1);
-console.log("" + array);
+var a = Func(123);
+console.log("a = " + a);
