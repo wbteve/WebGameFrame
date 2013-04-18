@@ -22,6 +22,11 @@ module.exports = {
     SceneServerPortMin : 9200,
     SceneServerPortMax : 9300,
 
+    // DB
+    DataBaseIP : "127.0.0.1",
+    DataBaseUser : "root",
+    DataBasePwd : "123456",
+
 
     end : null
 };

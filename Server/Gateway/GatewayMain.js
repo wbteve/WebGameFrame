@@ -10,11 +10,15 @@
 // 2、监听局域网端口，接收内部服务器的消息转发
 // 3、为服务器分配UUID
 
+var mysql = require("mysql");
+
 var cfg = require("../Config/Config");
 var tcp = require("../../network/tcp");
 var msg = require("../../network/msg");
 var duid = require("../../network/duid");
 var log = require("../../network/log");
+var errcode = require("../../network/errcode");
+var db = require("../DB/DBMain");
 
 var LOG_FLAG = "GatewayServer";
 
@@ -39,6 +43,10 @@ function STServer(hSocket, nDUID){
 };
 
 ////////////////////////////////////////////////////////////////
+// 数据库操作
+db.InitDB();
+
+////////////////////////////////////////////////////////////////
 // 启动网关服务器，监听来自客户端的消息
 g_hSocketWAN = tcp.CreateServer(
     cfg.GatewayServerPortWAN,
@@ -53,6 +61,10 @@ g_hSocketWAN = tcp.CreateServer(
         var vPacket = JSON.parse(szBuffer);
         var vMsgType = msg.GET_MSG_TYPE(vPacket.nMsgCode);
         switch (vMsgType) {
+            case msg.MsgType.CSC_ClientRegister:
+                // 玩家注册
+                onClientRegister(hSocket, vPacket);
+                break;
             case msg.MsgType.CSC_ClientLogin:
                 // 玩家登陆
                 onClientLogin(hSocket, vPacket);
@@ -70,7 +82,7 @@ g_hSocketWAN = tcp.CreateServer(
 
     // 服务器关闭处理
     function(hSocket){
-
+        onClientLogout(hSocket);
     },
 
     // 连接响应
@@ -79,24 +91,48 @@ g_hSocketWAN = tcp.CreateServer(
     }
 );
 
+// 客户端注册
+function onClientRegister(hSocket, vPacket) {
+    // 连接DB，注册新用户
+    db.UserRegister(hSocket, duid.GetClientUUID(),
+        vPacket.szName, vPacket.szPassword, onClientRegisterCallBack);
+};
+// DB回调
+function onClientRegisterCallBack(hSocket, nRetCode, szName){
+    var vPacket = msg.STClientRegisterResponse(nRetCode);
+    tcp.SendBuffer(hSocket, JSON.stringify(vPacket));
+    switch (nRetCode){
+        case errcode.ERR_DB_OK:
+            log.LOG(LOG_FLAG, "ClientRegister(name:" + szName + ") success!");
+            break;
+        case errcode.ERR_DB_USERNAME_EXISTED:
+            log.LOG(LOG_FLAG, "ClientRegister(name:" + szName + ") failed! username existed!");
+            break;
+    }
+};
+
 // 客户端请求登陆
 function onClientLogin(hSocket, vPacket){
     // 连接DB，进行登陆验证
-    var nUUID = 0;
+    db.UserLogin(hSocket, vPacket.szName, vPacket.szPassword, onClientLoginCallBack);
+};
+// DB登陆检查回调
+function onClientLoginCallBack(hSocket, nRetCode, nUUID){
+    var vDUID = 0, vUUID = 0;
 
-    // 验证通过，将玩家加入到玩家列表中
-    var client = new STClient(hSocket, nUUID, duid.GetClientDUID());
-    g_ClientPool.push(client);
+    if (nRetCode == errcode.ERR_DB_OK) {
+        // 验证通过，将玩家加入到玩家列表中
+        vUUID = nUUID;
+        vDUID = duid.GetClientDUID();
+        var client = new STClient(hSocket, vUUID, vDUID);
+        g_ClientPool.push(client);
+
+        log.LOG(LOG_FLAG, "ClientLogin (uuid:" + vUUID + ", duid:" + vDUID +") success!");
+    }
 
     // 发送反馈消息到客户端
-    var vPacket = null;
-
-    log.LOG(LOG_FLAG,
-        "ClientLogin:(ip:" + hSocket.address().address +
-        " duid:" + client.nDUID +
-        " uuid:" + client.nUUID +
-        ")"
-    );
+    var vPacket = msg.STClientLoginResponse(nRetCode, vDUID, vUUID);
+    tcp.SendBuffer(hSocket, JSON.stringify(vPacket));
 };
 
 // 客户端请求登出
@@ -109,13 +145,8 @@ function onClientLogout(hSocket, vPacket){
     var client = null;
     for (var i = 0; i < nCount; i++){
         client = g_ClientPool[i];
-        if (client.hSocket == hScoket){
-            log.LOG(LOG_FLAG,
-                "ClientLogout:(ip:" + hSocket.address().address +
-                " duid:" + client.nDUID +
-                " uuid:" + client.nUUID +
-                ")"
-            );
+        if (client.hSocket == hSocket){
+            log.LOG(LOG_FLAG, "ClientLogout (uuid:" + client.nUUID + ", duid:" + client.nDUID + ")");
             g_ClientPool.splice(i, 1); // 从i下标开始，删除一个元素
             break;
         }
@@ -173,18 +204,11 @@ function onAddServer(hSocket){
     g_ServerPool.push(srv);
 
     // 发送反馈消息
-    var vPacket = {};
-    vPacket.nMsgCode = msg.MAKE_MSG_CODE(
-        msg.MsgObj.Gateway,
-        msg.MsgObj.Server,
-        msg.MsgType.SS_ServerLogin
-    );
-    vPacket.nSrcDUID = duid.GatewayDUID;
-    vPacket.nDstDUID = srv.nDUID
+    var vPacket = msg.STServerLoginResponse(duid.GatewayDUID, srv.nDUID);
     tcp.SendBuffer(hSocket, JSON.stringify(vPacket));
     log.LOG(LOG_FLAG,
-        "AddServer(ip:" + hSocket.address().address +
-        " duid:" + srv.nDUID +
+        "ServerLogin(ip:" + hSocket.address().address +
+        ", duid:" + srv.nDUID +
         ")"
     );
 }
@@ -196,9 +220,9 @@ function onRemoveServer(hSocket){
         srv = g_ServerPool[i];
         if (srv.hSocket == hSocket) {
             log.LOG(LOG_FLAG,
-                "RemoveServer(ip:" + srv.szIP +
-                " port:" + srv.nPort +
-                " duid:" +srv.nDUID +
+                "ServerLogout(ip:" + srv.szIP +
+                ", port:" + srv.nPort +
+                ", duid:" +srv.nDUID +
                 ")"
             );
             g_ServerPool.splice(1, i);

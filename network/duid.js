@@ -9,6 +9,13 @@
 // UUID : 唯一标示，和DUID的区别是UUID将存入数据库，只能标示玩家
 
 ////////////////////////////////////////////////////////////////
+// 玩家UUID
+var vClientUUID = 1000;
+function GetClientUUID(){
+    return vClientUUID++;
+}
+
+////////////////////////////////////////////////////////////////
 // 玩家DUID
 var vClientDUID = 1001;   // 客户端DUID从1001开始
 function GetClientDUID(){
@@ -27,6 +34,7 @@ function GetServerDUID(){
 }
 
 module.exports = {
+    GetClientUUID : GetClientUUID,
     GetClientDUID : GetClientDUID,
     GetServerDUID : GetServerDUID,
     GatewayDUID : vGatewayDUID,

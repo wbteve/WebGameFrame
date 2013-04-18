@@ -30,17 +30,31 @@ function UnInitDataBase() {
 }
 
 // 登陆验证
-function UserLoginCheck(szName, szPassword) {
+function UserLogin(hSocket, szName, szPassword, onCallBack) {
     var sql = "select * from mytank.actor where name = '" + szName + "'";
     conn.query(sql, function(err, rows){
         if (rows == undefined || rows.length == 0){
-            // 没有这个账号
-            return errcode.ERR_DB_NO_USER;
+            onCallBack(hSocket, errcode.ERR_DB_NO_USER);
+            return;
         }
         if (rows[0].password != szPassword){
-            return errcode.ERR_DB_PWD_WRONG;
+            onCallBack(hSocket, errcode.ERR_DB_PWD_WRONG);
+            return;
         }
-        return rows[0];
+        onCallBack(hSocket, errcode.ERR_DB_OK, rows[0].uuid);
+    });
+}
+
+// 注册新用户
+function UserRegister(hSocket, nUUID, szName, szPassword, onCallBack) {
+    var sql = "insert into mytank.actor values(" + nUUID + ", '" + szName + "', '" + szPassword + "');";
+    conn.query(sql, function(err, result){
+        if (err != null){
+            // 出错了，一般就是用户名重复了
+            onCallBack(hSocket, errcode.ERR_DB_USERNAME_EXISTED, szName);
+            return;
+        }
+        onCallBack(hSocket, errcode.ERR_DB_OK, szName);
     });
 }
 
@@ -48,7 +62,8 @@ function UserLoginCheck(szName, szPassword) {
 module.exports = {
     InitDB : InitDataBase,
     UnInitDB : UnInitDataBase,
-    LoginCheck : UserLoginCheck,
+    UserLogin : UserLogin,
+    UserRegister : UserRegister,
 
     end : null
 };

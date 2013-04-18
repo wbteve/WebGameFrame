@@ -23,12 +23,7 @@ g_hGatewaySocket = tcp.CreateClient(
     // 连接成功回调
     function(){
         // 发送登陆请求到网关
-        var vPacket = {};
-        vPacket.nMsgCode = msg.MAKE_MSG_CODE(
-            msg.MsgObj.Server,
-            msg.MsgObj.Gateway,
-            msg.MsgType.SS_ServerLogin
-        );
+        var vPacket = msg.STServerLoginRequest();
         tcp.SendBuffer(g_hGatewaySocket, JSON.stringify(vPacket));
     },
 
