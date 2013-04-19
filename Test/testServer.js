@@ -47,7 +47,7 @@ function CreateUser(name, pwd){
 var vv = CreateUser("name2", "pwd2");
 console.log("name : %s, password : %s", vv.szName, vv.szPassword);
 console.log("type : " + typeof(vv)); */
-
+/*
 var db = require("../Server/DB/DBMain");
 var errcode = require("../network/errcode");
 
@@ -61,4 +61,12 @@ function onCallBack(nRetCode, nUUID) {
 //console.log("RetCode = " + ret);
 db.UserRegister(null, 1236, "name5", "password1", onCallBack);
 
-db.UnInitDB();
+db.UnInitDB(); */
+
+var str = require("../network/strext");
+var ss = str.format("abcd_%s_%s", 12, "34");
+console.log(ss);
+
+process.on("exit", function(){
+    console.log("要关闭了");
+});

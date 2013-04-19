@@ -41,6 +41,14 @@ function STMsgHeader(nMsgCode, nSrcDUID, nDstDUID){
     return v;
 };
 
+////////////////////////////////////////////////////////////////
+function STUserBase(uuid, level, exp){
+    var v = new Object();
+    v.nUUID = uuid;
+    v.nLevel = level;
+    v.nExp = exp;
+    return v;
+}
 
 ////////////////////////////////////////////////////////////////
 // 客户端请求
@@ -76,7 +84,7 @@ function STClientLoginRequest(szName, szPassword) {
     v.szPassword = szPassword;
     return v;
 };
-function STClientLoginResponse(nRetCode, nDUID, nUUID){
+function STClientLoginResponse(nRetCode, nDUID, vBaseData){
     var v = new Object();
     v.nMsgCode = MAKE_MSG_CODE(
         MsgObj.Server,
@@ -84,7 +92,7 @@ function STClientLoginResponse(nRetCode, nDUID, nUUID){
         MsgType.CSC_ClientLogin);
     v.nRetCode = nRetCode;
     v.nDUID = nDUID;
-    v.nUUID = nUUID;
+    v.vBaseData = vBaseData;
     return v;
 };
 
@@ -158,6 +166,8 @@ module.exports = {
     MsgObj : MsgObj,
     MsgType : MsgType,
 
+
+    STUserBase : STUserBase,
 
     STClientRegisterRequest     : STClientRegisterRequest,
     STClientRegisterResponse    : STClientRegisterResponse,

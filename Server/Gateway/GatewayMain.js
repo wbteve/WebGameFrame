@@ -19,6 +19,7 @@ var duid = require("../../network/duid");
 var log = require("../../network/log");
 var errcode = require("../../network/errcode");
 var db = require("../DB/DBMain");
+var strext = require("../../network/strext");
 
 var LOG_FLAG = "GatewayServer";
 
@@ -88,6 +89,11 @@ g_hSocketWAN = tcp.CreateServer(
     // 连接响应
     function(hSocket){
         // 有客户端连接上来了，
+    },
+
+    // 错误处理
+    function(hSocket, e){
+        console.log("err : " + e.code);
     }
 );
 
@@ -117,21 +123,21 @@ function onClientLogin(hSocket, vPacket){
     db.UserLogin(hSocket, vPacket.szName, vPacket.szPassword, onClientLoginCallBack);
 };
 // DB登陆检查回调
-function onClientLoginCallBack(hSocket, nRetCode, nUUID){
-    var vDUID = 0, vUUID = 0;
-
+function onClientLoginCallBack(hSocket, nRetCode, vBaseData){
+    var nDUID = 0;
     if (nRetCode == errcode.ERR_DB_OK) {
         // 验证通过，将玩家加入到玩家列表中
-        vUUID = nUUID;
-        vDUID = duid.GetClientDUID();
-        var client = new STClient(hSocket, vUUID, vDUID);
+        nDUID = duid.GetClientDUID();
+        var client = new STClient(hSocket, vBaseData.nUUID, nDUID);
         g_ClientPool.push(client);
 
-        log.LOG(LOG_FLAG, "ClientLogin (uuid:" + vUUID + ", duid:" + vDUID +") success!");
+        log.LOG(LOG_FLAG, strext.format(
+            "ClientLogin (duid:%s, uuid:%s, level:%s, exp:%s) success!",
+            nDUID, vBaseData.nUUID, vBaseData.nLevel, vBaseData.nExp));
     }
 
     // 发送反馈消息到客户端
-    var vPacket = msg.STClientLoginResponse(nRetCode, vDUID, vUUID);
+    var vPacket = msg.STClientLoginResponse(nRetCode, nDUID, vBaseData);
     tcp.SendBuffer(hSocket, JSON.stringify(vPacket));
 };
 
@@ -146,7 +152,7 @@ function onClientLogout(hSocket, vPacket){
     for (var i = 0; i < nCount; i++){
         client = g_ClientPool[i];
         if (client.hSocket == hSocket){
-            log.LOG(LOG_FLAG, "ClientLogout (uuid:" + client.nUUID + ", duid:" + client.nDUID + ")");
+            log.LOG(LOG_FLAG, strext.format("ClientLogout (duid:%s, uuid:%s)", client.nDUID, client.nUUID));
             g_ClientPool.splice(i, 1); // 从i下标开始，删除一个元素
             break;
         }
@@ -196,6 +202,11 @@ g_hSocketLAN = tcp.CreateServer(
     // 连接响应
     function(hSocket){
 
+    },
+
+    // 错误处理
+    function(hSocket, e){
+        console.log("err : " + e.code);
     }
 );
 
@@ -235,3 +246,13 @@ function onServerMsgRoute(hSocket, vPacket){
     var vMsgCode = msg.GET_MSG_INFO(vPacket.nMsgCode);
 
 }
+
+
+
+
+process.on("exit", function(){
+    console.log("网关关闭");
+    g_hSocketWAN.end();
+    g_hSocketLAN.end();
+    db.UnInitDB();
+});

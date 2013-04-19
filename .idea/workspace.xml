@@ -2,28 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a81326e4-1c3b-4245-80d3-3ec988e9e540" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/DB/DBMain.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/network/errcode.js" />
-      <change type="DELETED" beforePath="D:\leecrest\MyCode\WebGameFrame\network\packet.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Config/Config.js" afterPath="$PROJECT_DIR$/Server/Config/Config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/network/strext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/DB/DBMain.js" afterPath="$PROJECT_DIR$/Server/DB/DBMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Gateway/GatewayMain.js" afterPath="$PROJECT_DIR$/Server/Gateway/GatewayMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Hall/HallMain.js" afterPath="$PROJECT_DIR$/Server/Hall/HallMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/duid.js" afterPath="$PROJECT_DIR$/network/duid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/msg.js" afterPath="$PROJECT_DIR$/network/msg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/tcp.js" afterPath="$PROJECT_DIR$/network/tcp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/testClient.js" afterPath="$PROJECT_DIR$/Client/testClient.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/testServer.js" afterPath="$PROJECT_DIR$/Test/testServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebGameFrame.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366275763583" ignored="false" />
+    <file path="/Dummy.txt" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366331740234" ignored="false" />
     <file path="/GameServer.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1365944293983" ignored="false" />
     <file path="/test.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366095467469" ignored="false" />
-    <file path="/testServer.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366292126316" ignored="false" />
-    <file path="/tcp.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366098802374" ignored="false" />
+    <file path="/testServer.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366335203515" ignored="false" />
+    <file path="/tcp.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366332105009" ignored="false" />
     <file path="/AdapterMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366184699691" ignored="false" />
     <file path="/Config.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366286237687" ignored="false" />
-    <file path="/msg.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366291108500" ignored="false" />
-    <file path="/GatewayMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366293536113" ignored="false" />
+    <file path="/msg.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366337864159" ignored="false" />
+    <file path="/GatewayMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366338904144" ignored="false" />
     <file path="/架构.txt" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366184608632" ignored="false" />
     <file path="/HallServerMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366202665979" ignored="false" />
     <file path="/uuid.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366252425789" ignored="false" />
@@ -32,13 +30,14 @@
     <file path="/duid.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366290912113" ignored="false" />
     <file path="/log.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366261585612" ignored="false" />
     <file path="/stropt.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366261870733" ignored="false" />
-    <file path="/testClient.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366293227218" ignored="false" />
+    <file path="/testClient.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366338710520" ignored="false" />
     <file path="/config.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366276220631" ignored="false" />
     <file path="/pak.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366279061701" ignored="false" />
-    <file path="/DBMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366292689012" ignored="false" />
+    <file path="/DBMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366338395491" ignored="false" />
     <file path="/DataBaseMain.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366293344422" ignored="false" />
     <file path="/errcode.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366292764462" ignored="false" />
     <file path="/fragment.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366287957573" ignored="false" />
+    <file path="/strext.js" changelist="a81326e4-1c3b-4245-80d3-3ec988e9e540" time="1366334677138" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,36 +57,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GatewayMain.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Server/Gateway/GatewayMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="19" selection-start="3107" selection-end="3107" vertical-scroll-proportion="0.7419355">
-              <folding>
-                <element signature="e#1441#1496#0" expanded="false" />
-                <element signature="e#2298#2338#0" expanded="false" />
-                <element signature="e#2374#2403#0" expanded="false" />
-                <element signature="e#4556#4611#0" expanded="false" />
-                <element signature="e#4660#5201#0" expanded="false" />
-                <element signature="e#5240#5280#0" expanded="false" />
-                <element signature="e#5316#5324#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HallMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Hall/HallMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="17" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="testClient.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/testClient.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="26" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
+            <state line="29" column="126" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,7 +69,7 @@
       <file leaf-file-name="testServer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/testServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="43" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
+            <state line="63" column="33" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,8 +78,49 @@
       <file leaf-file-name="DBMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/DB/DBMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="53" selection-start="1609" selection-end="1609" vertical-scroll-proportion="0.0">
+            <state line="57" column="59" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GatewayMain.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/Gateway/GatewayMain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="162" column="49" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.546789">
+              <folding>
+                <element signature="e#1487#1542#0" expanded="false" />
+                <element signature="e#2344#2384#0" expanded="false" />
+                <element signature="e#2420#2449#0" expanded="false" />
+                <element signature="e#4773#4828#0" expanded="false" />
+                <element signature="e#4877#5418#0" expanded="false" />
+                <element signature="e#5457#5497#0" expanded="false" />
+                <element signature="e#5533#5541#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strext.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network/strext.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="msg.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network/msg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="20" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!block;n#MAKE_MSG_CODE#0" expanded="false" />
+                <element signature="n#!!block;n#GET_MSG_SRC#0" expanded="false" />
+                <element signature="n#!!block;n#GET_MSG_DST#0" expanded="false" />
+                <element signature="n#!!block;n#GET_MSG_TYPE#0" expanded="false" />
+                <element signature="n#!!block;n#GET_MSG_INFO#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +128,7 @@
       <file leaf-file-name="errcode.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/network/errcode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="46" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
+            <state line="15" column="4" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Server/Hall/HallServerMain.js" />
-        <option value="$PROJECT_DIR$/network/uuid.js" />
         <option value="$PROJECT_DIR$/Client_Nodejs/testClient.js" />
         <option value="$PROJECT_DIR$/Client/config.js" />
         <option value="$PROJECT_DIR$/network/packet.js" />
@@ -148,11 +160,13 @@
         <option value="$PROJECT_DIR$/network/pak.js" />
         <option value="$PROJECT_DIR$/network/duid.js" />
         <option value="$PROJECT_DIR$/Server/Hall/HallMain.js" />
-        <option value="$PROJECT_DIR$/network/msg.js" />
-        <option value="$PROJECT_DIR$/Test/testServer.js" />
         <option value="$PROJECT_DIR$/network/errcode.js" />
-        <option value="$PROJECT_DIR$/Client/testClient.js" />
+        <option value="$PROJECT_DIR$/network/tcp.js" />
+        <option value="$PROJECT_DIR$/network/strext.js" />
+        <option value="$PROJECT_DIR$/Test/testServer.js" />
         <option value="$PROJECT_DIR$/Server/DB/DBMain.js" />
+        <option value="$PROJECT_DIR$/network/msg.js" />
+        <option value="$PROJECT_DIR$/Client/testClient.js" />
         <option value="$PROJECT_DIR$/Server/Gateway/GatewayMain.js" />
       </list>
     </option>
@@ -217,7 +231,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebGameFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebGameFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebGameFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebGameFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -257,15 +307,15 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.general" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server/Hall/HallMain.js" />
+    <property name="options.lastSelected" value="preferences.general" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server/Hall/HallMain.js" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.Client">
+  <component name="RunManager" selected="Node.js.Gateway">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -290,7 +340,9 @@
       <method />
     </configuration>
     <configuration default="false" name="Gateway" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="Server/Gateway/GatewayMain.js" working-dir="$PROJECT_DIR$">
+      <RunnerSettings RunnerId="NodeJS.debug" />
       <RunnerSettings RunnerId="NodeJS.run" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
@@ -359,12 +411,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15487714" sideWeight="0.6735043" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -375,6 +426,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -439,64 +491,33 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql/test/run.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="16" selection-start="150" selection-end="150" vertical-scroll-proportion="0.23835126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql/test/unit/test-ConnectionConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="65" selection-start="475" selection-end="475" vertical-scroll-proportion="0.3405018">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql/node_modules/require-all/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="356" selection-end="356" vertical-scroll-proportion="0.37455198">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mysql/node_modules/require-all/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.44265231">
-          <folding />
-        </state>
+        <state line="13" column="19" selection-start="277" selection-end="277" vertical-scroll-proportion="0.44265231" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mysql/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="371" selection-end="377" vertical-scroll-proportion="0.23835126">
-          <folding />
-        </state>
+        <state line="7" column="42" selection-start="371" selection-end="377" vertical-scroll-proportion="0.23835126" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/PoolConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="7" selection-start="485" selection-end="485" vertical-scroll-proportion="0.72479564">
-          <folding />
-        </state>
+        <state line="14" column="7" selection-start="485" selection-end="485" vertical-scroll-proportion="0.72479564" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/ConnectionConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="62" selection-start="540" selection-end="540" vertical-scroll-proportion="0.67302454">
-          <folding />
-        </state>
+        <state line="13" column="62" selection-start="540" selection-end="540" vertical-scroll-proportion="0.67302454" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/Config/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.8297491">
-          <folding />
-        </state>
+        <state line="27" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.8297491" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/network/duid.js">
@@ -506,9 +527,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/network/log.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="255" selection-end="255" vertical-scroll-proportion="0.40860215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/tcp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="37" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.5107527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/testServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="33" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Hall/HallMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="15" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/errcode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="4" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/strext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/DB/DBMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="59" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/network/msg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="27" selection-start="3608" selection-end="3608" vertical-scroll-proportion="1.1553134">
+        <state line="93" column="20" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!block;n#MAKE_MSG_CODE#0" expanded="false" />
             <element signature="n#!!block;n#GET_MSG_SRC#0" expanded="false" />
@@ -519,52 +589,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/errcode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="46" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/testServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="43" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Hall/HallMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="17" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/testClient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="26" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/DB/DBMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="53" selection-start="1609" selection-end="1609" vertical-scroll-proportion="0.0">
+        <state line="29" column="126" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/Gateway/GatewayMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="19" selection-start="3107" selection-end="3107" vertical-scroll-proportion="0.7419355">
+        <state line="162" column="49" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.546789">
           <folding>
-            <element signature="e#1441#1496#0" expanded="false" />
-            <element signature="e#2298#2338#0" expanded="false" />
-            <element signature="e#2374#2403#0" expanded="false" />
-            <element signature="e#4556#4611#0" expanded="false" />
-            <element signature="e#4660#5201#0" expanded="false" />
-            <element signature="e#5240#5280#0" expanded="false" />
-            <element signature="e#5316#5324#0" expanded="false" />
+            <element signature="e#1487#1542#0" expanded="false" />
+            <element signature="e#2344#2384#0" expanded="false" />
+            <element signature="e#2420#2449#0" expanded="false" />
+            <element signature="e#4773#4828#0" expanded="false" />
+            <element signature="e#4877#5418#0" expanded="false" />
+            <element signature="e#5457#5497#0" expanded="false" />
+            <element signature="e#5533#5541#0" expanded="false" />
           </folding>
         </state>
       </provider>

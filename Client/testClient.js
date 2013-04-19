@@ -17,8 +17,8 @@ var g_hSocket = tcp.CreateClient(
     // 连接成功回调
     function() {
         // 请求登陆
-        //onLogin("name1", "password1");
-        onRegister("name1", "password1");
+        onLogin("name1", "password1");
+        //onRegister("name1", "password1");
     },
 
     // 消息处理
@@ -26,7 +26,8 @@ var g_hSocket = tcp.CreateClient(
         var vPacket = JSON.parse(szBuffer);
         switch (vPacket.nMsgCode) {
             case msg.MAKE_MSG_CODE(msg.MsgObj.Server,msg.MsgObj.Client,msg.MsgType.CSC_ClientLogin) :
-                console.log("收到 登陆 反馈！RetCode=%d, DUID=%d, UUID=%d", vPacket.nRetCode, vPacket.nDUID, vPacket.nUUID);
+                console.log("收到 登陆 反馈！RetCode=%d, DUID=%d, UUID=%d, Level=%d, Exp=%d",
+                    vPacket.nRetCode, vPacket.nDUID, vPacket.vBaseData.nUUID, vPacket.vBaseData.nLevel, vPacket.vBaseData.nExp);
                 break;
             case msg.MAKE_MSG_CODE(msg.MsgObj.Server,msg.MsgObj.Client,msg.MsgType.CSC_ClientRegister) :
                 console.log("收到 注册 反馈！RetCode=%d", vPacket.nRetCode);

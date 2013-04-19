@@ -11,7 +11,7 @@ var net = require('net');
 var ExBuffer = require('ExBuffer');
 var ByteBuffer = require('ByteBuffer');
 
-function CreateServer(nPort, funInit, funReceive, funClose, funConnect) {
+function CreateServer(nPort, funInit, funReceive, funClose, funConnect, funError) {
     var server = net.createServer(function(hSocket) {
         // 粘包
         var exBuffer = new ExBuffer();
@@ -34,9 +34,8 @@ function CreateServer(nPort, funInit, funReceive, funClose, funConnect) {
         });
 
         //数据错误事件
-        hSocket.on('error', function(exception){
-            //console.log('socket error:' + exception);
-            hSocket.end();
+        hSocket.on('error', function(e){
+            funError(hSocket, e);
         });
 
         // 服务器关闭
